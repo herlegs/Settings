@@ -84,9 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export GOPATH="$HOME/go"
-export PATH=$GOPATH/bin:$PATH
-
 #export PROTO_PATH="$HOME/go/protoc-3.2.0-osx-x86_64"
 #export PATH=$PROTO_PATH/bin:$PATH
 
@@ -95,14 +92,20 @@ export PATH=$GOPATH/bin:$PATH
 #source ./scripts/exclusions.sh
 #popd
 
+#go alias
+export GOPATH="$HOME/go"
+export PATH=$GOPATH/bin:$PATH
+
+#python alias
 alias pp="export PYTHONPATH=`pwd`"
 
-eval $(thefuck --alias)
-alias fk="fuck"
+#git alias
 alias gs="git status"
 alias gb="git branch"
 alias gch="git checkout"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git pull origin master"
+
+#zsh alias
 alias opzsh="open ~/.zshrc"
