@@ -109,3 +109,6 @@ alias gp="git pull origin master"
 
 #zsh alias
 alias opzsh="open ~/.zshrc"
+
+#IDE alias
+alias gl="gogland"
