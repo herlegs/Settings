@@ -106,6 +106,7 @@ alias gch="git checkout"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git pull origin master"
+alias gd="git diff"
 
 #zsh alias
 alias opzsh="open ~/.zshrc"
