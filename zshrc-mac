@@ -14,7 +14,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -87,15 +87,26 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH="$HOME/go"
 export PATH=$GOPATH/bin:$PATH
 
-#export PROTO_PATH="$HOME/go/protoc-3.2.0-osx-x86_64"
-#export PATH=$PROTO_PATH/bin:$PATH
+export SCRIPTS="/Users/yuguang.xiao/go/src/gitlab.myteksi.net/gophers/go/scripts"
+export PATH=$SCRIPTS:$PATH
 
-#pushd $GOPATH/src/github.com/myteksi/go
-#source ./scripts/set-env.sh ci &> /dev/null
-#source ./scripts/exclusions.sh
-#popd
+export PROTO_PATH="$HOME/go/protoc-3.5.1-osx-x86_64"
+export PATH=$PROTO_PATH/bin:$PATH
+
+export JAVA_HOME="/Library/Java/Home"
+
+export SPARK_BIN="/Users/yuguang.xiao/Applications/spark-2.2.1-bin-hadoop2.7/bin"
+export PATH=$SPARK_BIN:$PATH
+
+export PATH=/usr/local/go/bin:$PATH
+
+pushd $GOPATH/src/gitlab.myteksi.net/gophers/go
+source ./scripts/set-env.sh ci &> /dev/null
+source ./scripts/exclusions.sh
+popd
 
 alias pp="export PYTHONPATH=`pwd`"
+alias frodo-init="pushd $GOPATH/src/gitlab.myteksi.net/gophers/go && ./scripts/db.sh automation/frodo && popd"
 
 eval $(thefuck --alias)
 alias fk="fuck"
@@ -105,4 +116,11 @@ alias gch="git checkout"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gp="git pull origin master"
+alias gd="git diff"
 alias opzsh="open ~/.zshrc"
+alias gl="goland"
+alias op="open -t"
+alias srzsh="source ~/.zshrc"
+alias af="arc feature"
+
+alias v3="ETCDCTL_API=3 etcdctl"
