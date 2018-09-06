@@ -14,7 +14,9 @@ brew install bash-completion
 brew install curl
 brew install gcc
 brew install git
-# brew install go
+brew install go
+brew install redis
+brew install mercurial
 # brew install node
 # brew install ocaml
 # brew install octave
