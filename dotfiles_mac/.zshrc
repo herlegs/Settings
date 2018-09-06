@@ -112,4 +112,4 @@ alias gd="git diff"
 alias opzsh="open ~/.zshrc"
 
 #IDE alias
-alias gl="gogland"
+alias gl="goland"
