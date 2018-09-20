@@ -132,6 +132,9 @@ function vgw() {
 	v3 get -w json "$@" | jq
 }
 
+alias vw="v3 watch"
+alias vwp="v3 watch --prefix=true"
+
 pushd $GOPATH/src/gitlab.myteksi.net/gophers/go
 source ./scripts/set-env.sh ci &> /dev/null
 source ./scripts/exclusions.sh
