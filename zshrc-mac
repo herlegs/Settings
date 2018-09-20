@@ -100,13 +100,7 @@ export PATH=$SPARK_BIN:$PATH
 
 export PATH=/usr/local/go/bin:$PATH
 
-pushd $GOPATH/src/gitlab.myteksi.net/gophers/go
-source ./scripts/set-env.sh ci &> /dev/null
-source ./scripts/exclusions.sh
-popd
-
 alias pp="export PYTHONPATH=`pwd`"
-alias frodo-init="pushd $GOPATH/src/gitlab.myteksi.net/gophers/go && ./scripts/db.sh automation/frodo && popd"
 
 eval $(thefuck --alias)
 alias fk="fuck"
@@ -123,4 +117,22 @@ alias op="open -t"
 alias srzsh="source ~/.zshrc"
 alias af="arc feature"
 
+#etcd alias
 alias v3="ETCDCTL_API=3 etcdctl"
+alias vstatus="v3 -w table endpoint status --cluster"
+alias vhealth="v3 -w table endpoint health --cluster"
+alias vleaseg="v3 lease grant"
+alias vleasek="v3 lease keep-alive"
+alias vleasel="v3 lease list"
+alias vleaset="v3 lease timetolive"
+
+alias vp="v3 put"
+alias vg="v3 get"
+function vgw() {
+	v3 get -w json "$@" | jq
+}
+
+pushd $GOPATH/src/gitlab.myteksi.net/gophers/go
+source ./scripts/set-env.sh ci &> /dev/null
+source ./scripts/exclusions.sh
+popd
