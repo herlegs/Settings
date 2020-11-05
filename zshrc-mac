@@ -132,6 +132,7 @@ alias vg="v3 get"
 function vgw() {
 	v3 get -w json "$@" | jq
 }
+alias vd="v3 del"
 
 alias vw="v3 watch"
 alias vwp="v3 watch --prefix=true"
